@@ -264,5 +264,21 @@ public class EX2 {
 //                -כתבו תוכנית המקבלת מהמשתמש
 //                את הפרמטרים הנדרשים ואז מדפיסה מהו השכר הסופי שיקבל.
 
+        System.out.println("הכנס את שכר היסוד");
+        double salary = scanner.nextInt(); //12,000
+        System.out.println("הכנס את יעד המכירות");
+        int salesTarget = scanner.nextInt(); //50,000
+        System.out.println("הכנס את המכירות בפועל");
+        int actualSales = scanner.nextInt(); //55,000
+
+
+
+        if (actualSales >= salesTarget){
+            salary  = salary*1.75;
+        } else if ((actualSales/salesTarget)*100 >=50) {
+            salary = salary+2000;
+        }
+
+        System.out.println("The salary: " +salary);
     }
 }
