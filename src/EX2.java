@@ -10,7 +10,7 @@ public class EX2 {
 //        כתבו תוכנית המבקשת מהמשתמש להכניס מספר גבוה מ-1000.
 //        אם אכן מוכנס מספר גבוה מ-1000, התוכנית מדפיסה
 //        "Success", אחרת היא מדפיסה "Failure".
-
+//
 //        System.out.println("pleas enter number bigger than 1000");
 //        int number = scanner.nextInt();
 //        if (number > 1000){
@@ -264,21 +264,67 @@ public class EX2 {
 //                -כתבו תוכנית המקבלת מהמשתמש
 //                את הפרמטרים הנדרשים ואז מדפיסה מהו השכר הסופי שיקבל.
 
-        System.out.println("הכנס את שכר היסוד");
-        double salary = scanner.nextInt(); //12,000
-        System.out.println("הכנס את יעד המכירות");
-        int salesTarget = scanner.nextInt(); //50,000
-        System.out.println("הכנס את המכירות בפועל");
-        int actualSales = scanner.nextInt(); //55,000
+//        System.out.println("הכנס את שכר היסוד");
+//        double salary = scanner.nextInt(); //12,000
+//        System.out.println("הכנס את יעד המכירות");
+//        int salesTarget = scanner.nextInt(); //50,000
+//        System.out.println("הכנס את המכירות בפועל");
+//        int actualSales = scanner.nextInt(); //55,000
+//
+//
+//
+//        if (actualSales >= salesTarget){
+//            salary  = salary*1.75;
+//        } else if ((actualSales/salesTarget)*100 >=50) {
+//            salary = salary+2000;
+//        }
+//
+//        System.out.println("The salary: " +salary);
 
 
 
-        if (actualSales >= salesTarget){
-            salary  = salary*1.75;
-        } else if ((actualSales/salesTarget)*100 >=50) {
-            salary = salary+2000;
+//        תרגיל 14:
+//        כתבו תוכנית, השואלת את המשתמש בכמה כסף ירצה לקנות כרטיס.
+//        על המשתמש לבחור במספר בטווח של 10-100, בכפולות של 5 בלבד.
+//        לאחר מכן, התוכנית תרגיל שלושה מספרים בין 1-5 ותדפיס אותם.
+//        אם שניים מתוך המספרים הם זהים, המשתמש זוכה בסכום כפול
+//        מאשר זה ששילם עבור כרטיס. אם שלושת
+//        המספרים זהים, המשתמש זוכה בסכום מרובע מאשר
+//        זה ששילם עבור כרטיס. אם שלושת המספרים הם 7
+//        , המשתמש זוכה בסכום מרובע מאשר זה ששילם עבור כרטיס,
+//        כפול מספר נוסף שיוגרל על ידי המערכת, בטווח של 1-5.
+//        אם המספרים אינם זהים המשתמש לא זוכה בכלום. התוכנית תדפיס
+//        למשתמש הודעה שמפרטת לו את תוצאות ההימור (אם הפסיד/ניצח ובכמה כסף).
+
+
+        System.out.println("הכנס מספר בין 10 ל100 בכפולות של 5");
+        int price = scanner.nextInt();
+
+        int num1 = random.nextInt(1,6);
+        int num2 = random.nextInt(1,6);
+        int num3 = random.nextInt(1,6);
+
+        int winPrice = 0;
+        System.out.println("The numbers:  " + num1 + " , " + num2 + " , "+ num3);
+
+        if (num1==num2&&num1==num3){
+            winPrice = price*4;
+            if (num1==7){
+                int x = random.nextInt(1,6);
+                winPrice = winPrice*x;
+                System.out.println("שלושת המספרים שווים וגם הם שווים 7");
+                System.out.println("כפול ב: " + x);
+            }else {
+                System.out.println("שלושת המספרים שווים");
+            }
+        } else if (num1==num2 || num1==num3 || num2==num3){
+            winPrice = price*2;
+            System.out.println("שני מספרים שווים");
+        }else {
+            System.out.println("כל המספרים שונים");
         }
 
-        System.out.println("The salary: " +salary);
+
+        System.out.println("you win in : " + winPrice ) ;
     }
 }
