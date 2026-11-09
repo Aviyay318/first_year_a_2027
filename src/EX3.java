@@ -225,22 +225,71 @@ public class EX3 {
 //        כתבו תוכנית הקולטת מהמשתמש מספרים שלמים בזה אחר זה,
 //        ועוצרת לאחר שהוקלדו ברצף שלושה מספרים עוקבים בסדר עולה.
 
-        System.out.println("please...");
-        int previous = scanner.nextInt();
+//        System.out.println("please...");
+//        int previous = scanner.nextInt();
+//
+//        int count = 1;
+//        while (count < 3){
+//            System.out.println("please...");
+//            int current = scanner.nextInt();
+//
+//            if ((previous + 1) == current){
+//                count++;
+//            }else {
+//                count = 1;
+//            }
+//            previous = current;
+//        }
 
-        int count = 1;
-        while (count < 3){
-            System.out.println("please...");
-            int current = scanner.nextInt();
 
-            if ((previous + 1) == current){
-                count++;
-            }else {
-                count = 1;
+//        תרגיל 14:
+//        כתבו תוכנית הקולטת מהמשתמש מספר שלם lines, ואז מדפיסה lines שורות, כאשר בכל שורה יש lines כוכביות. לדוגמה, אם הקלט הוא 5, אז התבנית תיראה כך:
+//*****
+//*****
+//*****
+//*****
+//*****
+
+
+     //   System.out.println("*****");
+//        int lines = scanner.nextInt();
+//        for(int j = 0; j<lines;j++){
+//            for (int i=0;i<lines;i++){ //שורה
+//                System.out.print("*");
+//            }
+//            System.out.println();
+//        }
+
+//        תרגיל 15:
+//        כתבו תוכנית הקולטת מהמשתמש מספר שלם lines, ואז מדפיסה lines שורות, כאשר בכל שורה יש lines מופעים של הערך lines. לדוגמה, אם הקלט הוא 3, אז התבנית תיראה כך:
+//        333
+//        333
+//        333
+
+
+//        int lines = scanner.nextInt();
+//        for(int j = 0; j<lines;j++){
+//            for (int i=0;i<lines;i++){ //שורה
+//                System.out.print(lines);
+//            }
+//            System.out.println();
+//        }
+
+//        תרגיל 16:
+//        כתבו תוכנית הקולטת מהמשתמש מספר שלם lines,
+//        ואז מדפיסה lines שורות לפי התבנית הבאה (בהנחה שהקלט הוא 4):
+//        1111
+//        2222
+//        3333
+//        4444
+
+        int lines = scanner.nextInt();
+        for (int i=0;i<lines;i++){
+            for (int j = 0; j < lines; j++) {
+                System.out.print(i+1);
             }
-            previous = current;
+            System.out.println();
         }
-
     }
 
 
