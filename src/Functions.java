@@ -1,3 +1,6 @@
+import java.util.Random;
+import java.util.Scanner;
+
 public class Functions {
 
 
@@ -30,4 +33,69 @@ public class Functions {
         return false;
     }
 
+//    כתבו פונקציה המקבלת מספר שלם number ואז מדפיסה
+//    number מספרים שלמים אקראיים בטווח של 0 עד number.
+
+    public static void function4(int number){
+        Random random = new Random();
+        for (int i=0;i<number;i++){
+            System.out.println(random.nextInt(number));
+        }
+    }
+
+
+
+    public static int function5(int number){
+       Scanner scanner = new Scanner(System.in);
+       int max = 0;
+        for (int i = 0; i < number; i++) {
+           int input = scanner.nextInt();
+           if (input > max){
+               max = input;
+           }
+        }
+        return max;
+    }
+
+//    כתבו פונקציה המקבלת מספר שלם totalStudents,
+//    ואז קולטת מבקשת מהמשתמש להכניס totalStudents ציונים של סטודנטים.
+//    לאחר קליטת totalStudents ציונים, התוכנית תחשב את ממוצע הציונים.
+//    אם ממוצע הציונים הוא מעל 60,
+//    התוכנית תחזיר true, אחרת היא תחזיר false.
+
+    public static boolean function6(int totalStudents){
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+        for (int i = 0; i < totalStudents; i++) {
+            System.out.println("please enter student grade:");
+            int grade = scanner.nextInt();
+            sum+=grade; //sum = sum + grade
+        }
+        int avg = sum/totalStudents;
+        if (avg>60){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
+//    כתבו פונקציה המקבלת מספר שלם number ואז מדפיסה number מספרים שלמים אקראיים המתחלקים
+//    ב-number ללא שארית.
+    public static void function7(int number){
+        Random random = new Random();
+        for (int i = 0; i < number; i++) {
+           int x = random.nextInt(1,20);
+            System.out.println(x*number);
+        }
+    }
+
+//    כתבו פונקציה המקבלת מספר שלם number ואז מדפיסה את לוח הכפל בגודל number.
+    public static void function10(int number){
+        for(int i =1;i<=number;i++){
+            for (int j=1;j<=number;j++){
+                System.out.print(i*j);
+            }
+        }
+    }
 }
