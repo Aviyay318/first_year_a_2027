@@ -2,6 +2,28 @@ import java.util.Scanner;
 
 public class Str {
     public static void main(String[] args) {
+        String fullName = "Asi choen";
+
+        System.out.println(function("abcccdf","cccg"));
+        //subString(start,end)
+        System.out.println(fullName.substring(0,3));
+        System.out.println(fullName.substring(1,5));
+        //subString(start)
+        System.out.println(fullName.substring(4));
+
+        //indexOf
+        String word = "i xfjbgvjdfb love pasta";
+        int index = word.indexOf("love"); //אם לא קיים יחזיר -1
+        System.out.println("index of : " + index);
+        System.out.println(word.substring(index,index+4));
+
+        //contains - > מקבלת מחרוזת ומחזירה תשובה בוליאנית אם המחרוזת מוכלת במחזרות השנייה
+//        if (fullName.contains("si")){
+//
+//        }
+
+
+
 
         String str= "abcde";
         System.out.println(str);
@@ -15,10 +37,22 @@ public class Str {
             System.out.println(str.charAt(i));
         }
 
-       String fullName =  function1("abc" ,"try");
-        System.out.println(fullName);
+       String fullName1 =  function1("abc" ,"try");
+        System.out.println(fullName1);
         System.out.println( function4());
         function11("abcd");
+
+
+
+        //charAt() -> מקבלת מספר אינדקס מיקום, ומחזירה את התו במיקום ששלחנו לה
+        //length() -> אורך של מחרוזת
+        //equals() ->מקבלת מחרוזת ומחזירה תשובה בוליאנית אם המחזרות שוות
+        //שרשור - חיבור של תווים או מחרווזת +
+        //contains
+        //indexOf
+        //replace
+        //subString
+
     }
 
 //    כתבו פונקציה המקבלת שתי מחרוזות כפרמטרים:
@@ -121,5 +155,60 @@ public class Str {
           revers+=str.charAt(i); //revers = revers + str.charAt(i)
         }
         return revers;
+    }
+//
+//    תרגיל 12:
+//    כתבו פונקציה המבקשת מהמשתמש להכניס סיסמה חזקה.
+//    סיסמה חזקה עונה על הדרישות הבאות:
+//            -אורכה הוא 8-10 תווים
+//-בסיסמה יש לפחות תו אחד מבין הבאים: _, $ או %.
+
+    public static boolean function12(String password){
+        if (password.length() >=8 && password.length() <=10){
+//           if (password.indexOf("$")!=-1 || password.indexOf("%")!=-1){
+//               return true;
+//           }else {
+//               return false;
+//           }
+            if (password.contains("%")||password.contains("$")){
+                return true;
+            }else {
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
+    //יש לכתוב פונקציה שמקבלת 2 מחרוזות ובודקת אם המחזורת השנייה הקיימץת בראשונה
+    //במידה וכן יש להחזיר את המחרוזת הראשןנה אחרי שהסרנו מתוכה אץ השנייה
+    //לדוגמא
+    //str1 = "abcccdef" , str2 = "ccc"
+    //יחזור-> abdef
+    //הסרנו את הCCC מהמחרוזץ הראשונה
+    //אם המחרוזת לא קיימת בראשונה נחזיר את צירוף הראשונה והשנייה ביחד
+    //לדוגמא
+    //str1 = "abyyydef" , str2 = "ccc"
+    //יחזור-> abyyydefccc
+
+    public static String function(String str1 ,String str2){
+        if (str1.contains(str2)){
+            int indexStart = str1.indexOf(str2);
+            String tempStr=str1.substring(0,indexStart);
+            tempStr+=str1.substring(indexStart + str2.length());
+            return tempStr;
+        }else {
+            return str1 + str2;
+        }
+    }
+
+
+    public static void functionNewWay(String str1 ,String str2){
+        //replace
+        String str = "i love pasta";
+        str = str.replace("pasta","book");
+
+        if (str1.contains(str2)) {
+            str1 = str1.replace(str2,"");
+        }
     }
 }
