@@ -36,4 +36,14 @@ public class Str {
             System.out.println(second);
         }
     }
+//    תרגיל 3:
+//    כתבו פונקציה המקבלת מחרוזת ומספר שלם,
+//    ומחזירה תשובה חיובית אם המחרוזת היא בדיוק באורך המספר השלם.
+
+    public static boolean function3(String str, int num){
+        if (str.length() == num){
+            return true;
+        }
+        return false;
+    }
 }
