@@ -87,4 +87,22 @@ public class Str {
         }
         return count;
     }
+
+//    תרגיל 6:
+//    כתבו פונקציה המקבלת שתי מחרוזות כקלט ומחזירה תשובה בוליאנית
+//    באשר לשאלה האם הן זהות
+//    , ללא שימוש במתודה equals.
+
+    public static boolean function6(String str1,String str2){
+        if (str1.length() != str2.length()){
+            return false;
+        }
+        for (int i = 0; i < str1.length() ;i++){
+            if (str1.charAt(i) != str2.charAt(i)){
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
