@@ -73,4 +73,18 @@ public class Str {
 //
 //        }
     }
+
+//    תרגיל 5:
+//    כתבו פונקציה המקבלת מחרוזת text ותו toCount,
+//    ומחזירה את כמות הפעמים שהתו toCount מופיע במחרוזת text.
+
+    public static int function5(String text,char toCount){
+        int count = 0;
+        for (int i = 0; i < text.length(); i++) {
+           if (toCount == text.charAt(i)){
+               count++;
+           }
+        }
+        return count;
+    }
 }
