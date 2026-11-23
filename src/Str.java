@@ -25,4 +25,15 @@ public class Str {
         return firstName+ " " + lastName; //ab tr
     }
 
+//    תרגיל 2:
+//    כתבו פונקציה המקבלת
+//    כפרמטרים שתי מחרוזות ומדפיסה על המסך את המחרוזת הארוכה מבין השתיים.
+
+    public static void function2(String first, String second){
+        if (first.length() > second.length()){
+            System.out.println(first);
+        }else {
+            System.out.println(second);
+        }
+    }
 }
