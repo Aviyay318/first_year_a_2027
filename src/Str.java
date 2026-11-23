@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Str {
     public static void main(String[] args) {
 
@@ -15,6 +17,7 @@ public class Str {
 
        String fullName =  function1("abc" ,"try");
         System.out.println(fullName);
+        System.out.println( function4());
     }
 
 //    כתבו פונקציה המקבלת שתי מחרוזות כפרמטרים:
@@ -45,5 +48,29 @@ public class Str {
             return true;
         }
         return false;
+    }
+//    תרגיל 4:
+//    כתבו פונקציה הקולטת מהמשתמש שתי מחרוזות ומחזירה: 1 – אם המחרוזות זהות;
+//    2 – אם המחרוזות לא זהות אך מתחילות באותה האות; 3 – עבור כל אפשרות אחרת.
+
+    public static int function4(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("please enter str 1: ");
+        String str1 = scanner.nextLine();
+        System.out.println("please enter str 2: ");
+        String str2 = scanner.nextLine();
+
+        //שיוויון בין מחרוזות 
+        if (str1.equals(str2)){
+            return 1;
+        } else if (str1.charAt(0)==str2.charAt(0)) {
+            return 2;
+        }else {
+            return 3;
+        }
+        //מחרוזות לא שוות
+//        if (!str1.equals(str2)){
+//
+//        }
     }
 }
