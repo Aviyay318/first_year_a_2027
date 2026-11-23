@@ -18,6 +18,7 @@ public class Str {
        String fullName =  function1("abc" ,"try");
         System.out.println(fullName);
         System.out.println( function4());
+        function11("abcd");
     }
 
 //    כתבו פונקציה המקבלת שתי מחרוזות כפרמטרים:
@@ -105,4 +106,20 @@ public class Str {
         return true;
     }
 
+//    תרגיל 11:
+//    כתבו פונקציה המקבלת מחרוזת כפרמטר
+//    ומחזירה מחרוזת חדשה בהיפוך אותיות של המחרוזת המקורית.
+
+    public static String function11(String str){
+//        for (int i = 0; i < str.length(); i++) {
+//            System.out.println(str.charAt(i));
+//        }
+        //המיקום של התו האחרון -> האורך של המחרוזת פחות 1
+        //ריצה מהסוף להתחלה של מחרוזת
+        String revers = "";
+        for (int i = str.length()-1; i>=0 ;i--){
+          revers+=str.charAt(i); //revers = revers + str.charAt(i)
+        }
+        return revers;
+    }
 }
